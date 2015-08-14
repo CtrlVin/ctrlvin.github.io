@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CtrlV Uploader Demo</title>
+</head>
+<body>
+
+<a href="#" id="upload-btn">Upload a picture</a>
+<div id="images"></div>
+
+<script src="http://api.ctrlv.vagrant/upload.js"></script>
+<script>
+document.getElementById('upload-btn').addEventListener('click', function(){
+
+    ctrlv.upload(function(image){
+        document.getElementById('images').innerHTML += '<img src="' + image.urls.image + '" style="max-width:300px" /> ';
+    });
+
+});
+</script>
+
+</body>
+</html>
