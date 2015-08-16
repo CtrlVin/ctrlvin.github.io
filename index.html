@@ -9,7 +9,7 @@
 
 <a href="#" id="upload-btn">Upload a picture</a>
 <div id="images"></div>
-
+<div id="debug"></div>
 <script src="http://api.ctrlv.in/upload.js"></script>
 <script>
 document.getElementById('upload-btn').addEventListener('click', function(e){
@@ -18,6 +18,7 @@ document.getElementById('upload-btn').addEventListener('click', function(e){
 
     ctrlv.upload(function(image){
         document.getElementById('images').innerHTML += '<img src="' + image.urls.image + '" style="max-width:300px" /> ';
+        document.getElementById('debug').innnerHTML = '<pre>' + JSON.stringify(image, null, 2) + '</pre>';
     });
 
 });
